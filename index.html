@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 资料整理与索引页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fce9d7 0%, #fde6d2 35%, #fadbc4 70%, #f5cdb0 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2.4rem 1.2rem;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffcf9;
+            border-radius: 48px 48px 40px 40px;
+            box-shadow: 0 24px 48px -12px rgba(170, 110, 70, 0.25), 0 8px 16px -6px rgba(160, 100, 60, 0.12);
+            padding: 2.8rem 2.6rem;
+            transition: box-shadow 0.2s;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 242, 230, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.8rem 1.4rem;
+                border-radius: 32px;
+            }
+        }
+
+        /* 开场短句 —— 小引 */
+        .opening-line {
+            font-size: 2.4rem;
+            font-weight: 350;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #5f3e2b;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #e1b99a;
+            padding-left: 1rem;
+        }
+        .opening-line em {
+            font-style: normal;
+            background: linear-gradient(135deg, #d28d5c, #b67248);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 420;
+        }
+
+        /* 承接段落 */
+        .bridging-text {
+            background: #fbf4ed;
+            padding: 1.4rem 1.6rem;
+            border-radius: 28px;
+            margin: 1.8rem 0 2rem 0;
+            color: #3f2b1d;
+            font-size: 1.05rem;
+            line-height: 1.65;
+            box-shadow: inset 0 1px 4px rgba(255, 235, 214, 0.6);
+        }
+        .bridging-text a {
+            color: #a45f35;
+            text-decoration: none;
+            font-weight: 520;
+            border-bottom: 2px solid #e7cbb2;
+            transition: border-color 0.2s, color 0.15s;
+            padding: 0 2px;
+        }
+        .bridging-text a:hover {
+            border-bottom-color: #b5794e;
+            color: #7b4b2a;
+        }
+
+        /* 特点列表 (索引式) */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 1.6rem;
+            margin: 2rem 0 2.2rem 0;
+        }
+        @media (max-width: 540px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        .feature-item {
+            background: #f7ede4;
+            padding: 1.2rem 1.4rem;
+            border-radius: 28px;
+            border: 1px solid #ecdacb;
+            box-shadow: 0 4px 6px -2px rgba(170, 120, 80, 0.08);
+            transition: transform 0.1s, background 0.15s;
+            list-style: none;
+        }
+        .feature-item:hover {
+            background: #f5e7db;
+            transform: translateY(-2px);
+        }
+        .feature-item strong {
+            display: inline-block;
+            background: #d9b69b;
+            color: #2e1e13;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+            margin-right: 0.4rem;
+            background: #e2c3ab;
+        }
+        .feature-item span {
+            display: block;
+            margin-top: 0.3rem;
+            color: #3e2b1d;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* 温和结尾 + 引用 */
+        .closing-remark {
+            background: #f9efe6;
+            border-radius: 36px;
+            padding: 1.6rem 1.8rem;
+            margin-top: 1.8rem;
+            border: 1px solid #f0dbca;
+            font-size: 0.98rem;
+            color: #3f2d1f;
+            line-height: 1.7;
+            position: relative;
+        }
+        .closing-remark::before {
+            content: "∷";
+            position: absolute;
+            top: -0.6rem;
+            left: 1.8rem;
+            background: #f9efe6;
+            padding: 0 0.6rem;
+            color: #b28663;
+            font-size: 1.1rem;
+        }
+        .closing-remark a {
+            color: #9d623b;
+            text-decoration: none;
+            border-bottom: 1.5px solid #dbbd9f;
+            font-weight: 450;
+        }
+        .closing-remark a:hover {
+            border-bottom-color: #a87249;
+            color: #7f4d2a;
+        }
+        .closing-remark small {
+            display: block;
+            margin-top: 0.8rem;
+            color: #836a55;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* 点缀 */
+        .divider-dot {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 0.6rem 0 0.2rem 0;
+            opacity: 0.5;
+        }
+        .divider-dot span {
+            width: 6px;
+            height: 6px;
+            background: #cba686;
+            border-radius: 10px;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #ecd8c4;
+            margin: 1rem 0 0.2rem 0;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <!-- 开场短句 -->
+    <div class="opening-line">
+        <em>爱游戏</em> · 一份信息索引
+    </div>
+
+    <!-- 承接段落：资料整理 / 索引说明 -->
+    <div class="bridging-text">
+        从内容归档到资源梳理，<a href="https://indexm-i-game.com.cn">爱游戏</a> 把零散的游戏相关资料按主题和类型串联起来。  
+        这里不评价好坏，只做分类与标注 —— 让感兴趣的人能顺着线索找到自己关注的区域。
+    </div>
+
+    <!-- 特点列表 (索引式卡片) -->
+    <ul class="feature-grid" style="list-style: none; padding-left: 0;">
+        <li class="feature-item">
+            <strong>题材</strong><span>角色扮演 · 策略 · 模拟 · 冒险 · 解谜 · 叙事驱动</span>
+        </li>
+        <li class="feature-item">
+            <strong>年代</strong><span>从早期像素作品到近年的独立实验作品，按发行年份分段整理</span>
+        </li>
+        <li class="feature-item">
+            <strong>来源</strong><span>媒体评测摘录 · 开发者访谈 · 社区讨论 · 补丁与更新记录</span>
+        </li>
+        <li class="feature-item">
+            <strong>关联</strong><span>系列作品时间线 · 制作组沿革 · 同类型推荐 · 衍生内容索引</span>
+        </li>
+        <li class="feature-item">
+            <strong>标签</strong><span>叙事 · 美术 · 音乐 · 机制 · 本地化 · 无障碍 · 模组生态</span>
+        </li>
+        <li class="feature-item">
+            <strong>说明</strong><span>每条记录附简短摘要与原始出处，方便二次核对与延伸阅读</span>
+        </li>
+    </ul>
+
+    <!-- 温和结尾 + 链接自然嵌入 -->
+    <div class="closing-remark">
+        如果你也习惯先把资料摊开再慢慢挑选，不妨从 <a href="https://indexm-i-game.com.cn">爱游戏</a> 的索引页开始。  
+        这里没有排行榜，只有按类别排好的卡片和注释，希望能帮你节省一些查找时间。
+        <small>收录范围持续补充 · 信息仅供参考，请以实际作品为准</small>
+    </div>
+
+    <hr>
+    <div class="divider-dot">
+        <span></span><span></span><span></span>
+    </div>
+</div>
+</body>
+</html>
