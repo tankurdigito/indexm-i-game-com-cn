@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球友直播 · 一个可以快速找到方向的站点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            background: linear-gradient(145deg, #fef5e7 0%, #fce4d6 50%, #fddbcb 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+            line-height: 1.7;
+            color: #2e241e;
+        }
+
+        .card {
+            max-width: 780px;
+            width: 100%;
+            background: white;
+            border-radius: 42px;
+            padding: 2.8rem 2.5rem;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(60, 30, 10, 0.08);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+            color: #3f2c22;
+            border-left: 4px solid #d98c6a;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            color: #7f6b5c;
+            margin: 0.2rem 0 1.8rem 0;
+            padding-left: 1.4rem;
+            border-left: 2px solid #e9ccbb;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: #3b2c25;
+            background: #fcf6f0;
+            padding: 1.2rem 1.5rem;
+            border-radius: 24px;
+            border: 1px solid #f2ded0;
+        }
+
+        .section-title {
+            font-weight: 500;
+            font-size: 1.15rem;
+            margin: 2rem 0 0.6rem 0;
+            color: #4d362c;
+            display: inline-block;
+            border-bottom: 2px solid #dba88a;
+            padding-bottom: 4px;
+        }
+
+        .para {
+            margin-bottom: 1.2rem;
+            color: #3d2e26;
+        }
+
+        .para strong {
+            font-weight: 500;
+            color: #583e30;
+        }
+
+        .para a {
+            color: #975b3c;
+            text-decoration: none;
+            font-weight: 500;
+            background: #f8ede5;
+            padding: 0.05rem 0.5rem;
+            border-radius: 40px;
+            transition: background 0.15s, color 0.15s;
+            white-space: nowrap;
+            display: inline-block;
+            line-height: 1.6;
+        }
+
+        .para a:hover {
+            background: #dba88a;
+            color: white;
+        }
+
+        .quote-block {
+            background: #f8f1ea;
+            border-left: 6px solid #dba88a;
+            padding: 0.8rem 1.2rem;
+            margin: 1.6rem 0;
+            border-radius: 0 24px 24px 0;
+            font-style: normal;
+            color: #4a372d;
+            font-size: 0.98rem;
+        }
+
+        .quote-block::before {
+            content: "📌 ";
+            font-style: normal;
+        }
+
+        .faq-summary {
+            margin-top: 2.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #dcc6b8;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            min-width: 5.5rem;
+            color: #5a3f32;
+        }
+
+        .faq-a {
+            color: #4a372d;
+        }
+
+        .closing {
+            margin: 2rem 0 0.8rem 0;
+            text-align: right;
+            font-size: 0.95rem;
+            color: #6d5545;
+            border-top: 1px solid #eedfd3;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.8rem 1.5rem;
+                border-radius: 36px;
+            }
+
+            .card h1 {
+                font-size: 1.7rem;
+                padding-left: 0.8rem;
+            }
+
+            .subhead {
+                font-size: 0.85rem;
+                padding-left: 1rem;
+            }
+
+            .intro {
+                font-size: 0.95rem;
+                padding: 1rem;
+            }
+
+            .para a {
+                white-space: normal;
+                word-break: break-all;
+            }
+
+            .faq-item {
+                flex-direction: column;
+                gap: 0.15rem;
+            }
+
+            .faq-q {
+                min-width: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>球友直播</h1>
+        <div class="subhead">一个不需要解释太多的地方 · 简洁博客式笔记</div>
+
+        <div class="intro">
+            第一次来到这个网址，你可能需要花几秒确认它的用途。<br>
+            其实很简单：这里就是 <strong>球友直播</strong> —— 一个围绕球类内容展开的站点。
+        </div>
+
+        <p class="para">
+            如果你喜欢在线上关注真实的球赛、球局或者球友交流，那么 <a href="https://asia-qiuyou.com">球友直播</a> 这个名字本身就在告诉你它的大致方向。没有复杂的导航，也没有冗余的引导，你看到的通常是干净的信息流或直播入口。
+        </p>
+
+        <p class="para">
+            很多用户第一次访问时，会下意识扫一眼页面结构，判断这里是否值得停留。而站点的设计逻辑也恰好迎合了这种直觉：<strong>直接、轻量、不去过度包装</strong>。你不需要注册才能理解它在做什么，也不需要看长篇大论的介绍——它的核心表达就写在名字里。
+        </p>
+
+        <div class="quote-block">
+            一位使用者曾这样描述：「打开球友直播，你不需要猜。它就像球场边的一个座位，坐下来就能看到正在进行的事。」
+        </div>
+
+        <p class="para">
+            从内容类型来看，<strong>球友直播</strong> 更偏向于实况与氛围的传递，而非赛后集锦或二次剪辑。它试图还原「正在发生」的感觉，这也是它区别于其他体育类平台的地方。如果你更在意即时性与陪伴感，这里或许比传统的比分网站更贴合你的习惯。
+        </p>
+
+        <div class="section-title">适合什么样的人</div>
+        <p class="para">
+            其实没有严格的边界。无论是偶尔路过、想看看有什么球局正在进行的轻度用户，还是每天都会打开页面、把它当作背景音的中度球迷，都可以在 <a href="https://asia-qiuyou.com">球友直播</a> 找到自己的节奏。这里不强调社交压力，也不要求你马上参与讨论——看，本身就是一种参与。
+        </p>
+
+        <div class="section-title">一点提示</div>
+        <p class="para">
+            因为是直播类站点，内容会随时间变化。如果你觉得当前页面没有你期待的内容，可以稍后再来，或者在不同时段打开看看。站点的节奏由球友与赛事共同决定，不是固定的录播列表。
+        </p>
+
+        <div class="faq-summary">
+            <div class="faq-item">
+                <span class="faq-q">Q: 需要注册吗？</span>
+                <span class="faq-a">通常不需要。大多数区域可以直接浏览，部分互动功能可能需登录，但浏览本身没有门槛。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">Q: 主要有哪些球类？</span>
+                <span class="faq-a">以受众较广的球类为主，具体内容随直播安排变化，没有固定分类标签。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">Q: 移动端体验如何？</span>
+                <span class="faq-a">页面适配了手机屏幕，横竖屏都能正常观看直播流，操作与桌面端一致。</span>
+            </div>
+        </div>
+
+        <div class="closing">
+            —— 球友直播 · 一种正在进行的观看方式
+        </div>
+    </div>
+</body>
+</html>
