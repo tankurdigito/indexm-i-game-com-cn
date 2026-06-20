@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>球友直播 · 再访专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f7f9;
+      color: #1e1e1e;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+      padding: 0 24px;
+      margin: 0 auto;
+    }
+
+    /* hero 横幅 — 极简留白 */
+    .hero {
+      margin-top: 64px;
+      margin-bottom: 56px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 6px;
+      font-weight: 450;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #111;
+      margin-bottom: 18px;
+      max-width: 80%;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #4a4a4e;
+      max-width: 65%;
+      border-left: 2px solid #d0d0d4;
+      padding-left: 20px;
+    }
+
+    /* 背景说明卡片 — 轻质感 */
+    .context-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .context-card h2 {
+      font-size: 1.2rem;
+      font-weight: 520;
+      color: #222;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .context-card p {
+      font-size: 0.95rem;
+      color: #3c3c40;
+      margin-bottom: 16px;
+    }
+
+    .context-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .context-card .meta-note {
+      font-size: 0.82rem;
+      color: #7c7c80;
+      border-top: 1px solid #ededef;
+      padding-top: 18px;
+      margin-top: 12px;
+    }
+
+    /* 三段介绍 — 干净清晰 */
+    .intro-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .intro-item {
+      border-bottom: 1px solid #e7e7eb;
+      padding-bottom: 24px;
+    }
+
+    .intro-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .intro-item h3 {
+      font-size: 1.1rem;
+      font-weight: 510;
+      color: #222;
+      margin-bottom: 6px;
+    }
+
+    .intro-item p {
+      font-size: 0.94rem;
+      color: #444;
+      max-width: 90%;
+    }
+
+    .intro-item .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: #eaecee;
+      color: #444;
+      padding: 2px 10px;
+      border-radius: 30px;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    /* 页尾提示 */
+    .footer-note {
+      margin-top: 16px;
+      margin-bottom: 80px;
+      padding: 20px 0;
+      border-top: 1px solid #dcdcdf;
+      text-align: left;
+    }
+
+    .footer-note p {
+      font-size: 0.9rem;
+      color: #555;
+      max-width: 75%;
+    }
+
+    .footer-note a {
+      color: #1a1a1e;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b0b0b4;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .footer-note a:hover {
+      text-decoration-color: #1a1a1e;
+    }
+
+    /* 响应式 */
+    @media (max-width: 560px) {
+      .hero h1 {
+        font-size: 1.8rem;
+        max-width: 100%;
+      }
+
+      .hero p {
+        max-width: 100%;
+        padding-left: 16px;
+      }
+
+      .context-card {
+        padding: 24px 20px;
+      }
+
+      .intro-item p {
+        max-width: 100%;
+      }
+
+      .footer-note p {
+        max-width: 100%;
+      }
+
+      .page {
+        padding: 0 16px;
+      }
+    }
+
+    /* 极小屏 */
+    @media (max-width: 380px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 横幅 -->
+    <header class="hero">
+      <span class="hero-label">再次访问 · 收藏指引</span>
+      <h1>持续关注的<br>球友直播叙事</h1>
+      <p>从一场直播到一种习惯，沉淀与回访同样重要。</p>
+    </header>
+
+    <!-- 背景说明：为什么再次访问 & 收藏价值 -->
+    <section class="context-card">
+      <h2>并非偶然重返</h2>
+      <p>直播内容的吸引力往往存在于瞬间，但真正让体验沉淀的，是主动回访与持续关注。对于经常浏览体育赛事、户外活动或实时交流场景的用户而言，将值得驻留的页面加入收藏夹，等于为下一次观看铺设一条更短的路。回访不是重复，而是对内容价值的重新确认。</p>
+      <p>我们注意到，许多访问者在首次浏览后，会间隔数小时或数天再次回到同一个直播界面——收藏行为因此变得不只是工具性操作，更是一种内容筛选与注意力管理。一个干净、克制的入口，有助于降低回访的心理摩擦。</p>
+      <div class="meta-note">基于近期用户行为观察 · 直播回访场景</div>
+    </section>
+
+    <!-- 三段自然介绍：从收藏、回访、持续关注展开 -->
+    <div class="intro-grid">
+      <div class="intro-item">
+        <span class="tag">收藏逻辑</span>
+        <h3>将页面纳入常用集合</h3>
+        <p>当直播安排不固定，或某一话题持续发酵时，将当前页面添加至浏览器书签或收藏夹，可在下一次无需搜索直接抵达。收藏本身并非终点，而是建立个人内容索引的起点——适用于定期赛事、长期连载或实时互动场景。</p>
+      </div>
+
+      <div class="intro-item">
+        <span class="tag">回访节奏</span>
+        <h3>从一次观看到周期性关注</h3>
+        <p>单次直播的结束不代表内容价值的终结。回访者往往带着更明确的意图：查看最新进展、对比实时数据、或仅仅确认直播状态。这种周期性关注帮助用户构建对平台内容节奏的熟悉感，也使得每一次返回都更加高效。</p>
+      </div>
+
+      <div class="intro-item">
+        <span class="tag">持续关注</span>
+        <h3>收藏之外的轻量提醒</h3>
+        <p>除了依赖浏览器书签，保持对特定直播页面的关注还可以通过定期访问完成。持续关注并不意味着频繁刷新，而是有意识地选择在特定时间窗口返回。对于内容提供方而言，稳定的访问节奏比单次峰值更具参考意义。</p>
+      </div>
+    </div>
+
+    <!-- 页尾访问提示 - 自然嵌入“球友直播”链接 -->
+    <footer class="footer-note">
+      <p>
+        如需再次体验完整直播界面，推荐将
+        <a href="https://cn-site-qiuyou.com">球友直播</a>
+        加入浏览器收藏夹，或保持标签页常驻。回访是对内容最直接的认可，也是持续关注的起点。
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
